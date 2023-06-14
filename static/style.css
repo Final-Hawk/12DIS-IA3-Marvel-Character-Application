@@ -1,0 +1,323 @@
+:root {
+  --background: #16161a;
+  --card-background: #63637967;
+  --label-colour-1: #e53170;
+  --label-colour-2: #2cb67d;
+  --button-colour: #7f5af0;
+  --button-colour-hover: #6837f9;
+  --border-colour: #fffffe;
+  --colour: #fffffe;
+  --colour-opposite: #010101;
+  transition: .3s;
+  --background-gradient: linear-gradient(to left, #141e30, #243b55)
+}
+
+:root.light {
+  --background: #f8f5f2;
+  --card-background: #686979;
+  --label-colour-1: #e53170;
+  --label-colour-2: #078080;
+  --button-colour: #f45d48;
+  --button-colour-hover: #f24630;
+  --border-colour: #fffffe;
+  --colour: white;
+  --colour-opposite: black;
+  transition: .3s;
+  --background-gradient: linear-gradient(to right, #c33764, #1d2671)
+}
+
+body {
+  font-family: Inter, ui-sans-serif, "Segoe UI", Arial, sans-serif;
+  background-color: var(--background);
+  color: var(--colour);
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  background: var(--background-gradient)
+}
+
+h1 {
+  text-align: right;
+  right: 0
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1200px;
+  margin-block: 2rem;
+  gap: 2rem
+}
+
+/* Card Image */
+img {
+  max-width: 100%;
+  display: block;
+  object-fit: cover;
+  pointer-events: none
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100%
+}
+
+/* Card Body */
+.card__body {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;
+  height: 100%;
+  pointer-events: none
+}
+
+.card__body h4 {
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  margin-top: 1rem;
+  margin-bottom: 0
+}
+
+.card__body li {
+  font-size: 15px;
+  text-transform: capitalize;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.card__body ul {
+  padding-left: 20px;
+}
+
+.card {
+  width: clamp(20rem, calc(20rem + 2vw), 22rem)
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .2)
+}
+
+/* Card Tags */
+.tag {
+  align-self: flex-start;
+  padding: .25em .75em;
+  border-radius: 1em;
+  font-size: .75rem
+}
+
+.tag+.tag {
+  margin-left: .5em
+}
+
+.tag-blue {
+  background: var(--label-colour-1)
+}
+
+.tag-red {
+  background: var(--label-colour-2)
+}
+
+/*  Search Bar */
+form {
+  position: relative;
+  width: 200px;
+  cursor: pointer;
+  height: 50px;
+  background: var(--card-background);
+  box-sizing: border-box;
+  border-radius: 25px;
+  border: 4px solid var(--border-colour);
+  padding: 5px
+}
+
+input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 42.5px;
+  line-height: 30px;
+  outline: 0;
+  border: 0;
+  font-size: 1em;
+  border-radius: 20px;
+  padding: 0 20px;
+  color: var(--colour-opposite)
+}
+
+.fa {
+  box-sizing: border-box;
+  padding: 10px;
+  width: 42.5px;
+  height: 42.5px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 50%;
+  color: var(--colour);
+  text-align: center;
+  font-size: 1.2em;
+  transition: all 1s;
+  background: #07051a
+}
+
+/* More Info Button */
+.btn {
+  background-color: var(--button-colour);
+  border: none;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: .5s;
+  color: var(--colour);
+  font-size: 16px;
+  padding: 12px 12px 12px 12px;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .4);
+  margin-bottom: 5px;
+  margin-top: auto;
+  pointer-events: all
+}
+
+.btn:hover {
+  background-color: var(--button-colour-hover);
+  color: var(--colour) !important;
+  transition: .5s;
+  border-radius: 15px
+}
+
+/* Theme Button */
+.btn-theme {
+  background-color: var(--button-colour);
+  border: none;
+  border-radius: 10px;
+  transition: .5s;
+  color: var(--colour);
+  font-size: 16px;
+  padding: 12px 12px 12px 12px;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .4);
+  position: absolute;
+  left: 4%;
+  vertical-align: middle;
+  margin-top: auto;
+  z-index: 0
+}
+
+.btn-theme:hover {
+  background-color: var(--button-colour-hover);
+  color: var(--colour) !important;
+  transition: .5s;
+  border-radius: 15px
+}
+
+/* Home Button */
+.btn-home {
+  background-color: var(--button-colour);
+  border: none;
+  margin-right: 10%;
+  text-decoration: none;
+  border-radius: 40px;
+  transition: .5s;
+  color: var(--colour);
+  font-size: 16px;
+  padding: 12px 12px 12px 12px;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .4);
+  position: absolute;
+  left: 0;
+  vertical-align: middle;
+  margin-top: auto
+}
+
+.btn-home:hover {
+  background-color: var(--button-colour-hover);
+  color: var(--colour) !important;
+  transition: .5s
+}
+
+/* Fancy effect */
+.apple-tv-card-container {
+  position: relative;
+  overflow: visible !important;
+}
+
+.apple-tv-card-container>.apple-tv-card {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  border-radius: 25px;
+  box-shadow: 0 0.25rem 0.25rem #0002;
+  transform-origin: 50%;
+  transition: transform 50ms ease-in-out;
+  transform-style: preserve-3d;
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+}
+
+.apple-tv-card-container>.apple-tv-card.hover,
+.apple-tv-card-container>.apple-tv-card:focus-within {
+  box-shadow: 0 1.5rem 2rem 0.25rem #0005;
+  outline: none;
+  transform: translateZ(4rem);
+}
+
+.apple-tv-card-container>.apple-tv-card.hover+.apple-tv-card-title,
+.apple-tv-card-container>.apple-tv-card:focus-within+.apple-tv-card-title {
+  bottom: 0.9rem;
+  opacity: 1;
+}
+
+.apple-tv-card-container>.apple-tv-card>.shadow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  background: #0002;
+  opacity: 0;
+  z-index: 3;
+}
+
+.apple-tv-card-container>.apple-tv-card>.reflection {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  transform: translateY(-100%);
+  z-index: 4;
+}
+
+.apple-tv-card-container>.apple-tv-card>.content {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background-image: linear-gradient(to bottom, #555, #000);
+  background-position: center center;
+  z-index: 1;
+  position: relative !important;
+}
+
+.apple-tv-card-container>.apple-tv-card>.parallax-content {
+  transform-style: preserve-3d;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  background-position: center center;
+  background-repeat: no-repeat;
+  transition: transform 50ms ease-in-out;
+  z-index: 2;
+}

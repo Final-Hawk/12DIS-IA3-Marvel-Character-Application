@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+  <title>Marvel Characters</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"crossorigin="anonymous">
+  <link rel="stylesheet" href="static/style.css">
+  <script src="/static/script.js" defer></script>
+</head>
+<body>
+  <div class="header">
+    <a class="btn-home fas fa-home" href="/" class="button"></a>
+    <h1>Marvel Characters</h1>
+    <button class="btn-theme fas fa-palette" id="themeBtn" onclick="toggleTheme()"> Theme</button>
+  </div>
+  <form action="/" method="get" class="search-bar">
+    <input type="search" name="search" value="{{ query }}" placeholder="Search..." required>
+    <button action="/" class="fa fa-search" type="submit"></button>
+  </form>
+  <div class="container">
+    {% for character in characters %}
+    <div class="card apple-tv-card-container">
+      <div class="apple-tv-card">
+        <div class="content">
+          <div class="card__header">
+            <img src="{{ character.thumbnail }}" alt="card__image" class="card__image" width="600">
+          </div>
+          <div class="card__body">
+            <div class="tags">
+              <a class="tag tag-blue">{{ character.numcomics }} Comics</a>
+              <a class="tag tag-red">{{ character.numstories }} stories</a>
+            </div>
+            <h4>{{ character.name }}</h4>
+            <p>{{ character.description }}</p>
+            <a href="/character/{{ character.characterID }}" class="btn">More Info</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</body>
+</html>

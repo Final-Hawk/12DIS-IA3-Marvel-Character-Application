@@ -1,0 +1,13 @@
+body {
+  align-content: start;
+  font-size: 10px;
+}
+.container {
+  justify-content: top;
+  margin-top: auto;
+}
+h1 {
+  text-align: right;
+  font-size: 40px;
+  right: 0;
+}

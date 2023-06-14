@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Marvel Characters</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" crossorigin="anonymous" />
+  <link rel="stylesheet" href="/static/style.css" />
+  <link rel="stylesheet" href="/static/style2.css" />
+  <script src="/static/script.js" defer></script>
+</head>
+<body>
+  <div class="header">
+    <a class="btn-home fas fa-home" href="/" class="button"></a>
+    {% for character in characters %}
+    <h1>{{ character.name }}</h1>
+    {% endfor %}
+    <button class="btn-theme fas fa-palette" id="themeBtn" onclick="toggleTheme()">
+      Theme
+    </button>
+  </div>
+  <div class="container">
+    {% for character in characters %}
+    <div class="card apple-tv-card-container">
+      <div class="apple-tv-card">
+        <div class="content">
+          <div class="card__header">
+            <img src="{{ character.thumbnail }}" alt="card__image" class="card__image" width="600" />
+          </div>
+          <div class="card__body">
+            <div class="tags">
+              <a class="tag tag-blue">{{ character.numcomics }} Comics</a>
+              <a class="tag tag-red">{{ character.numstories }} stories</a>
+            </div>
+            <h4>{{ character.name }}</h4>
+            <p>{{ character.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card apple-tv-card-container">
+      <div class="apple-tv-card">
+        <div class="content">
+          <div class="card__body">
+            <h4>Character's Comics</h4>
+            <ul>
+              {% for comic in comics %}
+              <li>{{ comic.name }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card apple-tv-card-container">
+      <div class="apple-tv-card">
+        <div class="content">
+          <div class="card__body">
+            <h4>Character's Stories</h4>
+            <ul>
+              {% for story in stories %}
+              <li>{{ story.name }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</body>
+</html>
